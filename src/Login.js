@@ -1,16 +1,31 @@
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from './Firebaseconfig'; // Import Firebase Auth
 import './App.css';
 
-
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const sliderImages = [
-    'images.jpg',       // Replace with your actual image paths
-    '6256878.jpg',      // Replace with your actual image paths
-    'image1.jpg',     // Replace with your actual image paths
+    '6256878.jpg',       // Replace with your actual image paths
+    'images .jpg',      // Replace with your actual image paths
+    'image1.jpg',       // Replace with your actual image paths
   ];
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful!");
+    } catch (err) {
+      setError(err.message);
+      alert("incorrect password");
+    }
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderImages.length);
@@ -26,7 +41,7 @@ export default function Login() {
     <div className="main-container">
       {/* Left Side - Login Form */}
       <div className="left-pane">
-        <form action="/action_page.php">
+        <form onSubmit={handleLogin}>
           <div className="form-container">
             <h1 className="app-title">👋 heyreach</h1>
             <h2 className="login-title">Sign In</h2>
@@ -34,12 +49,15 @@ export default function Login() {
               Don't have an account? <Link to="/register">Sign up</Link>
             </h3>
 
+            {error && <p className="error-text">{error}</p>}
+
             <div className="input-field">
               <label className="input-label">Email address</label>
               <input
-                type="text"
-                name="Email address"
+                type="email"
                 placeholder="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="input-box"
               />
@@ -49,8 +67,9 @@ export default function Login() {
               <label className="input-label">Password</label>
               <input
                 type="password"
-                name="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className="input-box"
               />
