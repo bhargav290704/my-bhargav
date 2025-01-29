@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { sendPasswordResetEmail, fetchSignInMethodsForEmail } from "firebase/auth";
 import { auth } from "./Firebaseconfig"; // Import the Firebase configuration
 import "./App.css";
 
@@ -9,15 +9,41 @@ export default function ForgotPassword() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
+  // Check if email exists in Firebase Auth
+  const checkEmailExists = async (email) => {
+    try {
+      // Use Firebase method to get sign-in methods for the email
+      const methods = await fetchSignInMethodsForEmail(auth, email);
+      console.log(methods)
+      // If methods exist, email is valid
+      return methods.length > 0;
+    } catch (err) {
+      console.error("Error checking email existence:", err);
+      // Firebase error if email doesn't exist or some other issue
+      return false;
+    }
+  };
+
   const handlePasswordReset = async (e) => {
     e.preventDefault(); // Prevent form submission from refreshing the page
+
     try {
+      // Send reset email
       await sendPasswordResetEmail(auth, email);
       setMessage("Password reset link sent! Please check your email.");
-      setError("");
+      setError(""); // Clear any existing error message
     } catch (err) {
-      setError("Failed to send reset link. Please try again.");
-      console.error(err.message);
+      console.error("Error sending reset email:", err);
+
+      // Check specific error codes for more details
+      if (err.code === "auth/invalid-email") {
+        setError("The email address is not valid.");
+      } else if (err.code === "auth/user-not-found") {
+        setError("No user found with this email address.");
+      } else {
+        setError("Failed to send reset link. Please try again.");
+      }
+      setMessage(""); // Clear any success message
     }
   };
 
@@ -31,7 +57,7 @@ export default function ForgotPassword() {
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderImages.length);
   };
-  
+
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === 0 ? sliderImages.length - 1 : prevSlide - 1
