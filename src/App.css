@@ -210,7 +210,6 @@ body {
   margin-top: 10px;
 }
 
-
 .submit-btn {
   background-color: #3498db;
   color: #fff;
@@ -307,43 +306,286 @@ body {
   position: fixed;
 }
 
-.dashboard {
-  padding: 20px;
-  flex-grow: 1;
-  border-radius: 10px;
-  width: 100%;
+
+/* Sidebar Container Styles */
+.sidebar-container {
+  width: 60px;  /* Sidebar width */
+  background-color: #333;
+  color: white;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card-container,
-.cards-container {
+/* Sidebar Navigation Styles */
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  padding: 12px;
+  text-align: center;
+}
+
+/* Links Styling */
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
   display: flex;
-  flex-wrap: wrap;
+  text-align: center;
+}
+
+nav ul li a svg {
+  margin-right: 8px;  /* Space between the icon and the text */
+}
+
+/* Signout Button Styling */
+.signout-btn {
+  cursor: pointer;
+}
+
+
+
+
+/*Dashboard*/
+
+
+
+
+.MainWrapper {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  background-color: rgb(199, 255, 253);
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+.Header {
+  text-align: left;
+  margin-left: 50px;
+}
+
+.ContentWrapper {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 
-.card,
-.card1 {
+.DateRangeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.date-input {
+  width: 80%; /* Make the date inputs take up the full width */
+  padding: 8px;
+  margin-top: 4px; /* Add some space between date inputs */
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.DateRangeWrapper span {
+  font-size: 0.8rem;
+  color: #333;
+  margin-right: 15px;
+}
+
+/* Tabs */
+.TabContainer {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.TabButton {
+  padding: 12px 20px;
+  background: transparent;
+  color: #555;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+  margin-right: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.TabButton.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.TabButton:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.TabContent {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table */
+.TableWrapper {
+  overflow-x: auto;
+}
+
+.TableWrapper h3 {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.Table th {
+  background: rgb(200, 200, 200);
+  color: black;
+  padding: 12px;
+  text-align: left;
+}
+
+.Table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.Table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Status Badge */
+.StatusBadge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.StatusBadge.active {
+  color: #28a745;
+  background: #d4edda;
+}
+
+.StatusBadge.inactive {
+  color: #dc3545;
+  background: #f8d7da;
+}
+
+/* Stats Section */
+.StatsContainer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.StatsContainer p {
+  font-size: 14px;
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 102%;
+}
+
+.card {
   width: 30%;
   padding: 10px;
   border-radius: 8px;
   background-color: #ffffff;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .cards-container {
   display: flex;
-  gap: 10px;  /* Adjust spacing between cards */
-  flex-wrap: nowrap; /* Prevent wrapping */
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  height: 80%;
 }
 
 .card1 {
-  height: 60px;
-  width: 180px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  background-color: #fff;
+  padding: 0px 0px 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 189px; /* Adjust width as needed */
+}
+
+.blue-box {
+  width: 10px;
+  height: 10px;
+  background-color: #007bff; /* Blue color */
+}
+
+.green-box {
+  width: 10px;
+  height: 10px;
+  background-color: #00ff66; /* Blue color */
+}
+
+.orange-box {
+  width: 10px;
+  height: 10px;
+  background-color: #ffb300; /* Blue color */
+}
+
+.violet-box {
+  width: 10px;
+  height: 10px;
+  background-color: #cc00ff; /* Blue color */
+}
+
+.skyblue-box {
+  width: 10px;
+  height: 10px;
+  background-color: #00ffff; /* Blue color */
+}
+
+.black-box {
+  width: 10px;
+  height: 10px;
+  background-color: #000000; /* Blue color */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+  margin-left: 10px;
+  gap: 7px;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.8rem;  
+  font-weight: bold;
+}
+
+.value {
+  margin: 0;
+  font-size: 0.8rem;  
+  color: #555;
 }
 
 .content {
@@ -397,56 +639,16 @@ body {
   background-color: #f1f1f1;
 }
 
-.date-range-dropdown {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  z-index: 10;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
-
 .input-group {
   margin-bottom: 10px;
 }
 
-.date-input {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.apply-btn {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.apply-btn:hover {
-  background-color: #0056b3;
-}
-
 .card-container {
   display: flex;
-  justify-content: space-between; /* Ensure space between the cards */
-  gap: 20px; /* Add some space between the cards */
-}
-
-.card {
-  width: 30%; /* Ensure the cards are side by side and take up roughly 1/3 of the container width */
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-height: 150px;  /* Reduced height */
+  overflow: hidden;
 }
 
 h3 {
@@ -460,16 +662,9 @@ h3 {
   border: 1px solid #ddd;
 }
 
-.date-input {
-  width: 100%; /* Make the date inputs take up the full width */
-  padding: 8px;
-  margin-top: 10px; /* Add some space between date inputs */
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-
 .chart-container{
   margin-top: 30px;
+  font-size: 0.8rem;
 }
 
 .card h3 {
@@ -479,7 +674,136 @@ h3 {
 
 .card p {
   color: #555;
+  margin-bottom: 5px; /* Reduce bottom margin of the label */
+
 }
+
+body {
+  background-color: #f4f7fc;
+  color: #333;
+}
+
+.Pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.Pagination button {
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.Pagination span {
+  font-size: 16px;
+}
+
+/*Linkedin*/
+
+.LMainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  background-color: rgb(199, 255, 253);
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+.LText{
+  display: flex;
+  font-size: 0.8rem;
+  margin-left: 20px;
+  color: #3498db;
+  gap: 10px;
+}
+
+.info-icon {
+  color: #0077b5; /* LinkedIn Blue */
+  font-size: 0.8rem;
+  margin-top: 12px;
+}
+
+.LMainWrapper1 {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  background-color: rgb(199, 255, 253);
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.LButtons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-left: auto;
+}
+
+.purchase-btn,
+.connect-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.purchase-btn {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.connect-btn {
+  background-color: #007bff;
+  color: white;
+  margin-right: 20px;
+}
+
+.connect-btn:hover {
+  background-color: #3798ff;
+}
+
+.LUserIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;            /* Adjust as needed for desired space */
+}
+
+.user-icon{
+  font-size: 180px;
+  color: #cbcbcb;
+}
+
+.LText1 {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.LText2 {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #333;
+}
+
+.LText1, .LText2 {
+  margin: 0; /* Reduce the space between the two text blocks */
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -506,4 +830,62 @@ h3 {
    .right-pane {
      display: none; /* Hide right pane on mobile devices */
    }
+}
+
+@media (max-width: 768px) {
+  .MainWrapper {
+    flex-direction: column;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card1 {
+    min-width: 100%;
+  }
+
+  .TabContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .TabButton {
+    width: 100%;
+  }
+
+  .TableWrapper {
+    margin: 20px 0;
+  }
+
+  .Pagination {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .Header h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-container1 {
+    margin: 10px;
+  }
+
+  .card {
+    min-width: 100%;
+  }
+
+  .cards-container {
+    gap: 10px;
+  }
+
+  .card1 {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .chart-container {
+    width: 100%;
+  }
 }

@@ -4,6 +4,10 @@ import Layout from './components/Layout'; // Import the Layout component
 import Dashboard from './components/Dashboard';
 import Analytics from './components/Analytics';
 import Settings from './components/Settings';
+import Linkedin from './components/Linkedin';
+import PurchaseSeat from './components/PurchaseSeat';
+
+
 import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
@@ -25,6 +29,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/linkedin" element={<Linkedin />} />
+          <Route path="/purchaseseat" element={<PurchaseSeat />} />
         </Route>
       </Routes>
     </Router>
