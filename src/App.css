@@ -708,7 +708,11 @@ body {
   font-size: 16px;
 }
 
+
+
 /*Linkedin*/
+
+
 
 .LMainWrapper {
   display: flex;
@@ -749,8 +753,8 @@ body {
   margin-left: auto;
 }
 
-.purchase-btn,
-.connect-btn {
+.purchase-btn1,
+.LButtons {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
@@ -761,12 +765,12 @@ body {
   align-items: center;
 }
 
-.purchase-btn {
+.purchase-btn1 {
   background-color: #ffffff;
   color: #333;
 }
 
-.connect-btn {
+.LButtons {
   background-color: #007bff;
   color: white;
   margin-right: 20px;
@@ -803,6 +807,336 @@ body {
 .LText1, .LText2 {
   margin: 0; /* Reduce the space between the two text blocks */
 }
+
+
+/*CSS FOR CONNECT ACCOUNT*/
+
+
+.dcontainer {
+  position: relative;
+  padding: 20px;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -500px; /* Initially off-screen */
+  width: 500px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.drawer.open {
+  right: 0; /* Slide in the drawer */
+}
+
+.drawer-content {
+  padding: 20px;
+}
+
+.dclose-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.dcard{
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 0.8rem;
+  margin-top: -18px;
+}
+
+.dconnect-btn{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 95%;
+  height: 30px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dText{
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.dText1{
+  font-size: 0.6rem;
+  text-align: center;
+  color: #333;
+}
+
+.dText2{
+  font-size: 0.8rem;
+  text-align: center;
+  color: #333;
+  margin-top: 25px;
+}
+
+.dbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+
+
+/*CSS FOR PURCHASE SEAT*/ 
+
+
+
+
+.PSMainWrapper {
+  display: flex;
+  width: 94%;
+  background-color: rgb(186, 230, 255);
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row; /* Stacks panels in a column */
+  gap: 20px; /* Space between panels */
+  padding: 20px;
+}
+
+.panel1 {
+  width: 100%; /* Full width */
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(220, 220, 220);
+  border-radius: 10px;
+}
+
+.seat-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: space-between; /* Push items to opposite ends */
+  align-items: center; /* Align vertically */
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column; /* Stack label and input vertically */
+  align-items: flex-start; /* Align content to the left */
+  gap: 5px;
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
+#seat-input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.total-container {
+  display: flex;
+  flex-direction: column; /* Stack label and amount vertically */
+  align-items: flex-end; /* Align content to the right */
+  text-align: right;
+}
+
+.slider-container1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0px; /* Reduce space below slider */
+  width: 100%;
+  margin-top: 10px;
+  height: 50px;
+  padding: 20px;
+}
+
+.slider1 {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #1976d2;
+  border-radius: 5px;
+  outline: none;
+}
+
+.slider1::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #1976d2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.seat-labels {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+  margin-top: -5px; /* Reduce space above seat labels */
+}
+
+.total-label {
+  color: gray;
+  font-size: 14px;
+}
+
+.total-amount {
+  color: #1976d2;
+  font-size: 20px;
+}
+
+
+
+.panel2 {
+  width: 100%; /* Full width */
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column; 
+  margin-top: 0px;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 0;
+}
+
+.PSText{
+  display: flex;
+  font-size: 0.8rem;
+  margin-left: 20px;
+  color: #3498db;
+  gap: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1100px; /* Adds spacing between text and button */
+}
+
+.dismiss-btn {
+  background-color: #ffffff;
+  color: #333;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.PSMainWrapper1{
+  display: flex;
+  width: 100%;
+  background-color: rgb(253, 255, 186);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  flex-direction: column;
+  line-height: 0;
+}
+
+.Purchasenow-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.purchase-btn {
+  width: 650px; /* Adjust the width */
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.purchase-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.search-input {
+  width: 535px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+.bookdemo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.bookdemo-link {
+  font-size: 0.8rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.bookdemo-link:hover {
+  text-decoration: underline;
+}
+ 
 
 
 /* Responsive Styles */

@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout'; // Import the Layout component
+import Layout from './components/Layout'; // Sidebar Layout
 import Dashboard from './components/Dashboard';
 import Analytics from './components/Analytics';
 import Settings from './components/Settings';
-import Linkedin from './components/Linkedin';
-import PurchaseSeat from './components/PurchaseSeat';
-
+import LinkedInAccounts from './components/Linkedin'; // Added LinkedIn Accounts Page
+import PurchaseSeats from './components/PurchaseSeat'; // Renamed for clarity
 
 import Login from './Login';
 import Register from './Register';
@@ -17,7 +16,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Authentication Routes (Login, Register, etc.) */}
+        {/* Authentication Routes */}
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -25,12 +24,12 @@ function App() {
         <Route path="/logout" element={<Logout />} />
 
         {/* Protected Routes with Sidebar */}
-        <Route element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/linkedin" element={<Linkedin />} />
-          <Route path="/purchaseseat" element={<PurchaseSeat />} />
+          <Route path="/linkedin" element={<LinkedInAccounts />} />
+          <Route path="/purchase-seats" element={<PurchaseSeats />} />
         </Route>
       </Routes>
     </Router>

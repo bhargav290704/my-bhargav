@@ -4,11 +4,6 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";  // Import date picker styles
 import '../App.css';  // Import the extracted CSS file
 
-const data = [
-  { name: 'Jan', value: 1550 },
-  { name: 'Feb', value: 3000 },
-  { name: 'Mar', value: 5000 },
-];
 
 const pageSize = 2;  // Show 2 rows per page
 
@@ -46,7 +41,7 @@ const Dashboard = () => {
   ];
 
   const totalPages = Math.ceil(data.length / pageSize);
-  const paginatedData = data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const paginatedData = (activeTab === "senders" ? sendersData : campaignsData).slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
