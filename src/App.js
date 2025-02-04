@@ -6,6 +6,9 @@ import Analytics from './components/Analytics';
 import Settings from './components/Settings';
 import LinkedInAccounts from './components/Linkedin'; // Added LinkedIn Accounts Page
 import PurchaseSeats from './components/PurchaseSeat'; // Renamed for clarity
+import Leads from './components/Leads'; // Renamed for clarity
+import Campaigns from './components/Campaigns'; // Added Campaigns Page
+
 
 import Login from './Login';
 import Register from './Register';
@@ -28,6 +31,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/leads" element={<Leads />} />
+          <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/linkedin" element={<LinkedInAccounts />} />
           <Route path="/purchase-seats" element={<PurchaseSeats />} />
         </Route>
