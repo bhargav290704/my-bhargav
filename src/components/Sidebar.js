@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaTachometerAlt, FaChartLine, FaCog, FaLinkedin, FaUser, FaBullhorn, FaInbox, FaNetworkWired, FaSignOutAlt } from 'react-icons/fa'; // Import the required icons
+import { FaChartLine, FaCog, FaLinkedin, FaUser, FaBullhorn, FaInbox, FaNetworkWired, FaSignOutAlt } from 'react-icons/fa'; // Import the required icons
 import '../App.css'; // Import the CSS file
 
 const Sidebar = () => {
@@ -19,8 +19,7 @@ const Sidebar = () => {
       <h2 className="logo1">👋</h2>
       <nav>
         <ul>
-          <li><Link to="/dashboard"><FaTachometerAlt /></Link></li>
-          <li><Link to="/analytics"><FaChartLine /></Link></li>
+          <li><Link to="/dashboard"><FaChartLine /></Link></li>
           <li><Link to="/linkedin"><FaLinkedin /></Link></li>
           <li><Link to="/leads"><FaUser /></Link></li>
           <li><Link to="/campaigns"><FaBullhorn /></Link></li>  {/* Added Campaign Icon */}

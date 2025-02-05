@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import { Search } from "lucide-react";
 import '../App.css';
 
 
 export default function Leads() {
     const [activeTab, setActiveTab] = useState("senders");
     const [currentPage, setCurrentPage] = useState(1);
-  const data = []; // Define your data array here
-  const sendersData = []; // Define your sendersData array here
-  const campaignsData = []; // Define your campaignsData array here
-  const pageSize = 10; // Define your pageSize here
-  const totalPages = Math.ceil(data.length / pageSize);
-  const paginatedData = (activeTab === "senders" ? sendersData : campaignsData).slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    const data = []; // Define your data array here
+    const sendersData = []; // Define your sendersData array here
+    const campaignsData = []; // Define your campaignsData array here
+    const pageSize = 10; // Define your pageSize here
+    const totalPages = Math.ceil(data.length / pageSize);
+    const paginatedData = (activeTab === "senders" ? sendersData : campaignsData).slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
@@ -35,12 +34,12 @@ export default function Leads() {
                             className="leadssearch-container"
                         />
                     </div>
-                    
+
                     <div className="leadscard">
-                        <select className="dropdown-menu">
-                        <option value="account">List type: All</option>
-                        <option value="activity">Leads List</option>
-                        <option value="activity">Companies List</option>
+                        <select className="dropdown-menu" onChange={(e) => setActiveTab(e.target.value)}>
+                        <option value="senders">List type: All</option>
+                        <option value="leads">Leads List</option>
+                        <option value="companies">Companies List</option>
                         </select>
                     </div>
 
@@ -88,7 +87,7 @@ export default function Leads() {
                   <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
                   <span>Page {currentPage} of {totalPages}</span>
                   <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
-            </div>
+                </div>
           </div>
         
             </div>

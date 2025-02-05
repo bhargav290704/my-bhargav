@@ -44,12 +44,7 @@ export default function LinkedInAccounts() {
         {/* Buttons on the right */}
         <div className="LButtons">
           <button className="purchase-btn1" onClick={handlePurchaseClick}>+ Purchase seats</button>
-        
-        <div className="dcontainer">
-        <button className="LButtons" onClick={handleButtonClick}>
-          Connect account
-        </button>
-        </div>
+          <button className="purchase-btn2" onClick={handleButtonClick}><FaLinkedin size={16} color="white" />Connect account</button>
         </div>
 
       <div className={`drawer ${isDrawerOpen ? "open" : ""}`}>
@@ -127,7 +122,6 @@ export default function LinkedInAccounts() {
             </div>
         </div>
       </div>
-    
 
         <div className="LUserIcon">
           <FaUserCircle className="user-icon" />
