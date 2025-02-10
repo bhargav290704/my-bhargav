@@ -9,6 +9,7 @@ import PurchaseSeats from './components/PurchaseSeat'; // Renamed for clarity
 import Leads from './components/Leads'; // Renamed for clarity
 import Campaigns from './components/Campaigns'; // Added Campaigns Page
 import Inbox from './components/Inbox'; // Added Inbox Page
+import Network from './components/Network'; // Added Network Page
 
 
 import Login from './Login';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/leads" element={<Leads />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/inbox" element={<Inbox />} />
+          <Route path="/network" element={<Network />}/>
           <Route path="/linkedin" element={<LinkedInAccounts />} />
           <Route path="/purchase-seats" element={<PurchaseSeats />} />
         </Route>

@@ -7,6 +7,15 @@ import { Chrome } from "lucide-react";
 
 
 export default function LinkedInAccounts() {
+
+  const handleSuccess = (data) => {
+    console.log("LinkedIn login success", data);
+    // Handle success (i.e., retrieve user data from response)
+  };
+
+  const handleFailure = (error) => {
+    console.error("LinkedIn login error", error);
+  };
   const navigate = useNavigate(); // Hook to navigate on button click
 
   const handlePurchaseClick = () => {
@@ -47,6 +56,7 @@ export default function LinkedInAccounts() {
           <button className="purchase-btn2" onClick={handleButtonClick}><FaLinkedin size={16} color="white" />Connect account</button>
         </div>
 
+    
       <div className={`drawer ${isDrawerOpen ? "open" : ""}`}>
         <div className="drawer-content">
           <button className="dclose-btn" onClick={handleCloseDrawer}>✖</button>
